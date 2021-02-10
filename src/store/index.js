@@ -16,7 +16,12 @@ export default new Vuex.Store({
             'Rodolfo Llobet',
             'Tom Sullivan',
             'Sean Bennett',
-            'Michael Blank'
+            'Michael Blank',
+            'Michael Ciskanic',
+            'Rok Urankar',
+            'Andrew Smith',
+            'Aganze Nkere'
+
         ]
     },
     mutations: {},

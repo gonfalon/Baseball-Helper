@@ -1,6 +1,6 @@
 <template>
     <v-container class="d-flex flex-row align-left">
-        <v-card style="width: 25%">
+        <v-card class="rosterList">
             <v-list>
                 <v-list-item-group v-model="selectedPlayer" color="primary">
                     <v-list-item
@@ -16,7 +16,7 @@
             </v-list>
         </v-card>
         <v-spacer></v-spacer>
-        <v-card style="width: 70%">
+        <v-card class="detail">
             <h1>{{ roster[selectedPlayer] }}</h1>
         </v-card>
     </v-container>
@@ -36,4 +36,15 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.rosterList {
+    width: 20%;
+    height: 90%;
+}
+.detail
+{
+    width: 75%;
+    min-height: 75%;
+    text-align: center;
+}
+</style>

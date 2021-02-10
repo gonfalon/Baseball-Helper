@@ -7,13 +7,13 @@
             dark
             disable-resize-watcher
         >
-            <v-spacer></v-spacer>
             <v-list>
                 <v-list-item
                     v-for="(item, index) in items"
                     :key="index"
                     :to="item.to"
                     link
+                    @click="drawer = !drawer"
                 >
                     <v-list-item-title>
                         {{ item.title }}
@@ -23,7 +23,10 @@
             </v-list>
         </v-navigation-drawer>
         <v-app-bar app color="light-blue darken-4" dark>
-            <v-spacer class="hidden-md-and-up"></v-spacer>
+            <v-app-bar-nav-icon
+                v-if="!drawer"
+                @click="drawer = !drawer"
+            ></v-app-bar-nav-icon>
             <router-link to="/">
                 <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
             </router-link>
@@ -37,10 +40,11 @@ export default {
     data() {
         return {
             appTitle: 'Crusaders Baseball',
-            drawer: true,
+            drawer: false,
             items: [
-                { title: 'Menu', to: '/' },
-                { title: 'Sign In', to: '/2' },
+                { title: 'Home', to: '/' },
+                { title: 'Roster', to: '/roster' },
+                { title: 'Drills', to: '/drills' },
                 { title: 'Join', to: '/3' }
             ]
         };
