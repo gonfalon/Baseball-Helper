@@ -50,9 +50,9 @@
     "rules": {}
   },
   "prettier": {
-    "tabWidth":4,
-    "semi":true,
-    "singleQuote":true
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true
   },
   "browserslist": [
     "> 1%",

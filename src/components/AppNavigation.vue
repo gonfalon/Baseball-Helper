@@ -1,53 +1,44 @@
 <template>
     <span>
-        <v-navigation-drawer
-            app
-            v-model="drawer"
-            class="light-blue darken-4"
-            dark
-            disable-resize-watcher
-        >
-            <v-list>
-                <v-list-item
-                    v-for="(item, index) in items"
-                    :key="index"
-                    :to="item.to"
-                    link
-                    @click="drawer = !drawer"
-                >
-                    <v-list-item-title>
-                        {{ item.title }}
-                    </v-list-item-title>
-                    <v-divider :key="`divider-${index}`"></v-divider>
-                </v-list-item>
-            </v-list>
+        <v-navigation-drawer v-model="drawer" app color="light-blue darken-4" dark disable-resize-watcher>
+        <v-list>
+            <v-list-item
+            v-for="(item, index) in buttons"
+            :key="index"
+            :to="item.to"
+            @click="drawer=!drawer"
+            >
+            <v-list-item-icon>
+                <v-icon large color="white">{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content v-text="item.title" />
+            </v-list-item>
+        </v-list>
         </v-navigation-drawer>
         <v-app-bar app color="light-blue darken-4" dark>
-            <v-app-bar-nav-icon
-                v-if="!drawer"
-                @click="drawer = !drawer"
-            ></v-app-bar-nav-icon>
-            <router-link to="/">
-                <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-            </router-link>
+            <v-app-bar-nav-icon @click="drawer=!drawer" />
+            <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
         </v-app-bar>
     </span>
 </template>
 
 <script>
+import store from '@/store/index.js';
+
 export default {
     name: 'AppNavigation',
-    data() {
+    data: () => {
         return {
-            appTitle: 'Crusaders Baseball',
             drawer: false,
-            items: [
-                { title: 'Home', to: '/' },
-                { title: 'Roster', to: '/roster' },
-                { title: 'Drills', to: '/drills' },
-                { title: 'Join', to: '/3' }
+            buttons: [
+                { title: 'Roster', to: '/roster', icon: 'mdi-account-group' },
+                { title: 'Drills', to: '/drills', icon: 'mdi-baseball' },
+                { title: 'Depth Chart', to: '/deptchart', icon: 'mdi-baseball-diamond' }
             ]
         };
+    },
+    computed: {
+        appTitle: () => store.state.appTitle
     }
 };
 </script>

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Roster from '@/views/Roster';
-import Home from '@/views/Home';
 
 Vue.use(VueRouter);
 
@@ -11,7 +10,6 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: Home
     },
     {
         path: '/roster',
@@ -22,7 +20,7 @@ const routes = [
         path: '/drills',
         name: 'drills',
         beforeEnter: () => {
-            if (!win) {
+            if (!win || win.closed) {
                 win = window.open('https://baseball-tutorials.com');
             } else {
                 win.focus();

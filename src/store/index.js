@@ -5,6 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
+        appTitle: 'Crusaders Baseball 2021',
+        selectedPlayer: null,
         roster: [
             'Thomas Dunphy',
             'Caleb Wilson',
@@ -21,10 +23,14 @@ export default new Vuex.Store({
             'Rok Urankar',
             'Andrew Smith',
             'Aganze Nkere'
-
         ]
     },
-    mutations: {},
+    mutations: {
+        selectPlayer(state, id)
+        {
+            state.selectedPlayer = id;
+        }
+    },
     actions: {},
     modules: {}
 });
