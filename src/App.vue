@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <app-navigation></app-navigation>
-        <v-main>
+        <v-main class="theContent">
             <transition name="fade" mode="out-in">
                 <router-view />
             </transition>
@@ -34,4 +34,5 @@ export default {
 .fade-leave-active {
     opacity: 0;
 }
+
 </style>

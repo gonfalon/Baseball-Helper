@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Roster from '@/views/Roster';
+import Player from '@/views/Player';
 
 Vue.use(VueRouter);
 
@@ -9,7 +10,7 @@ let win = null;
 const routes = [
     {
         path: '/',
-        name: 'home',
+        name: 'home'
     },
     {
         path: '/roster',
@@ -26,6 +27,12 @@ const routes = [
                 win.focus();
             }
         }
+    },
+    {
+        path: '/player/:id',
+        name: 'player',
+        component: Player,
+        props: true
     }
 ];
 

@@ -7,9 +7,17 @@ import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false;
 
-new Vue({
+var app = new Vue({
     router,
     store,
     vuetify,
+    beforeCreate(){
+        this.$store.commit('initializeStore')
+    },
     render: h => h(App)
 }).$mount('#app');
+
+app.$store.subscribe((mutation, state) => {
+    // Store the state object as a JSON string
+    localStorage.setItem('store', JSON.stringify(state));
+});
