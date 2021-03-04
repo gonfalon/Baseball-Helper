@@ -19,10 +19,10 @@
 
                         <v-list-item-content @click="playerSelected(index)">
                             <v-list-item-title>
-                               {{ player.name }}
+                                {{ player.name }}
                             </v-list-item-title>
                             <v-list-item-title>
-                               {{player.bats[0]}}/{{player.throws[0]}}
+                                {{ player.bats[0] }}/{{ player.throws[0] }}
                             </v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>

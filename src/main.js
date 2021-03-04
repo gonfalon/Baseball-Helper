@@ -11,8 +11,8 @@ var app = new Vue({
     router,
     store,
     vuetify,
-    beforeCreate(){
-        this.$store.commit('initializeStore')
+    beforeCreate() {
+        this.$store.commit('initializeStore');
     },
     render: h => h(App)
 }).$mount('#app');
