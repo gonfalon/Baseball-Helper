@@ -10,7 +10,16 @@ export default new Vuex.Store({
             {
                 name: 'Thomas Dunphy',
                 bats: 'Right',
-                throws: 'Right'
+                throws: 'Right',
+                p: false,
+                c: false,
+                first: true,
+                second: true,
+                short: true,
+                third: true,
+                left: true,
+                center: true,
+                right: true
             }
         ]
     },

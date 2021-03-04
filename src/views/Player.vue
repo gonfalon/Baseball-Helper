@@ -34,6 +34,71 @@
                         <v-radio label="Left" value="Left" />
                     </v-radio-group>
                 </v-container>
+                <v-container class="d-flex flex-row">
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.p"
+                            @change="updatePlayer"
+                            label="P"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.c"
+                            @change="updatePlayer"
+                            label="C"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.first"
+                            @change="updatePlayer"
+                            label="1B"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.second"
+                            @change="updatePlayer"
+                            label="2B"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.short"
+                            @change="updatePlayer"
+                            label="SS"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.third"
+                            @change="updatePlayer"
+                            label="3B"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.left"
+                            @change="updatePlayer"
+                            label="LF"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.center"
+                            @change="updatePlayer"
+                            label="CF"
+                        ></v-switch>
+                    </div>
+                    <div class="cell">
+                        <v-switch
+                            v-model="player.right"
+                            @change="updatePlayer"
+                            label="RF"
+                        ></v-switch>
+                    </div>
+                </v-container>
             </v-form>
         </v-card>
     </v-container>
@@ -52,7 +117,16 @@ export default {
             player: {
                 name: '',
                 bats: '',
-                throws: ''
+                throws: '',
+                p: false,
+                c: false,
+                first: false,
+                second: false,
+                short: false,
+                third: false,
+                left: false,
+                center: false,
+                right: false
             }
         };
     },
@@ -74,4 +148,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.cell {
+    margin-right: 10px;
+}
+</style>

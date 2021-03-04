@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Baseball-Helper/precache-manifest.49cf07d721890e43f64e7dcc71fb34a8.js"
+  "/Baseball-Helper/precache-manifest.bcf53bca1f57a6a73c6244c4feaf0257.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "baseball"});

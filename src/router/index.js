@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Roster from '@/views/Roster';
 import Player from '@/views/Player';
+import Home from '@/views/Home';
 
 Vue.use(VueRouter);
 
@@ -10,7 +11,8 @@ let win = null;
 const routes = [
     {
         path: '/',
-        name: 'home'
+        name: 'home',
+        component: Home
     },
     {
         path: '/roster',
