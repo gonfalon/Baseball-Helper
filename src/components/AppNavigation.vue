@@ -3,9 +3,10 @@
         <v-navigation-drawer
             v-model="drawer"
             app
-            color="light-blue darken-4"
+            color="blue darken-3"
             dark
             disable-resize-watcher
+            temporary
         >
             <v-list>
                 <v-list-item
@@ -20,8 +21,12 @@
                     <v-list-item-content v-text="item.title" />
                 </v-list-item>
             </v-list>
+            <template v-slot:append>
+                <v-btn width="100%" color="blue darken-2">Import</v-btn>
+                <v-btn width="100%" color="blue darken-2">Export</v-btn>
+            </template>
         </v-navigation-drawer>
-        <v-app-bar app elevate-on-scroll color="light-blue darken-4" dark>
+        <v-app-bar app elevate-on-scroll color="blue darken-3" dark>
             <v-app-bar-nav-icon @click="drawer = true" />
             <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
         </v-app-bar>
@@ -40,8 +45,8 @@ export default {
                 { title: 'Roster', to: '/roster', icon: 'mdi-account-group' },
                 { title: 'Drills', to: '/drills', icon: 'mdi-baseball' },
                 {
-                    title: 'Depth Chart',
-                    to: '/deptchart',
+                    title: 'Field',
+                    to: '/field',
                     icon: 'mdi-baseball-diamond'
                 }
             ]

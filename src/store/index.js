@@ -36,6 +36,14 @@ export default new Vuex.Store({
                 );
             }
         },
+        importState(state, data) {
+            this.replaceState(
+                Object.assign(
+                    state,
+                    JSON.parse(data)
+                )
+            );
+        },
         newPlayer(state) {
             state.roster.push({ name: '', bats: '', throws: '' });
         },

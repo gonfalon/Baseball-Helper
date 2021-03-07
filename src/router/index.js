@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Roster from '@/views/Roster';
 import Player from '@/views/Player';
 import Home from '@/views/Home';
+import Field from '@/views/Field';
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
         name: 'player',
         component: Player,
         props: true
+    },
+    {
+        path: '/field',
+        name: 'field',
+        component: Field
     }
 ];
 
