@@ -22,11 +22,15 @@
                 </v-list-item>
             </v-list>
             <template v-slot:append>
-                <v-btn width="100%" color="blue darken-2">Import</v-btn>
-                <v-btn width="100%" color="blue darken-2">Export</v-btn>
+                <v-btn width="100%" color="blue darken-2" @click="importData"
+                    >Import</v-btn
+                >
+                <v-btn width="100%" color="blue darken-2" @click="exportData"
+                    >Export</v-btn
+                >
             </template>
         </v-navigation-drawer>
-        <v-app-bar app elevate-on-scroll color="blue darken-3" dark>
+        <v-app-bar app color="blue darken-3" dark>
             <v-app-bar-nav-icon @click="drawer = true" />
             <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
         </v-app-bar>
@@ -54,6 +58,18 @@ export default {
     },
     computed: {
         appTitle: () => store.state.appTitle
+    },
+    methods: {
+        importData() {},
+        exportData() {
+            var link = document.createElement('a');
+            link.download =
+                'BaseballHelper-' + new Date().toLocaleString() + '.json';
+            link.href =
+                'data:application/json;charset=utf-8,' +
+                encodeURIComponent(JSON.stringify(store.state));
+            link.click();
+        }
     }
 };
 </script>
